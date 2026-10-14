@@ -188,6 +188,58 @@ section[id] {
   box-shadow: 0 0 28px rgba(255, 56, 209, 0.4);
 }
 
+
+/* Dil seçici ve teklif butonu */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+#language-select {
+  padding: 10px 12px;
+  border: 1px solid #00f5ff;
+  border-radius: 10px;
+  background: #11141d;
+  color: #00f5ff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+
+#language-select option {
+  background: #11141d;
+  color: #fff;
+}
+
+.header-actions .cv-btn {
+  white-space: nowrap;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  #language-select {
+    padding: 9px 7px;
+  }
+}
+
 /* ========================================
    3. ANA EKRAN
 ======================================== */
