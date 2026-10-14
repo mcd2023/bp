@@ -7,10 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!href || href === "#") return;
 
-      const target = document.getElementById(
-        decodeURIComponent(href.slice(1))
-      );
+      let targetId;
 
+      try {
+        targetId = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+
+      const target = document.getElementById(targetId);
       if (!target) return;
 
       event.preventDefault();
@@ -24,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         block: "start"
       });
 
-      // Mobil menüyü bağlantıya tıklandığında kapat
+      // Mobil menüyü kapat
       const mobileMenu = document.getElementById("mobile-menu");
       const menuButton = document.getElementById("mobile-menu-btn");
 
@@ -45,8 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuButton && mobileMenu) {
     menuButton.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("is-open");
+      const isOpen = !mobileMenu.classList.contains("is-open");
 
+      mobileMenu.classList.toggle("is-open", isOpen);
       mobileMenu.classList.toggle("hidden", !isOpen);
       menuButton.setAttribute("aria-expanded", String(isOpen));
     });
@@ -55,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. WhatsApp bağlantıları
   document.querySelectorAll("[data-whatsapp]").forEach((button) => {
     button.addEventListener("click", (event) => {
-      // Bağlantı zaten href içeriyorsa normal davranışı kullan
       const href = button.getAttribute("href");
 
+      // Geçerli bir WhatsApp bağlantısı varsa varsayılan davranışı koru
       if (href && href !== "#") return;
 
       event.preventDefault();
@@ -81,32 +87,32 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  // 5. Dil seçicisi için erişilebilirlik
- document.addEventListener("DOMContentLoaded", () => {
+  // 5. Dil seçimi ve sayfa yönlendirme
   const languageSelect = document.getElementById("language-select");
 
-  if (!languageSelect) return;
+  if (languageSelect) {
+    const path = window.location.pathname;
 
-  const path = window.location.pathname;
+    if (path.startsWith("/en/")) {
+      languageSelect.value = "en";
+    } else if (path.startsWith("/de/")) {
+      languageSelect.value = "de";
+    } else {
+      languageSelect.value = "tr";
+    }
 
-  if (path.startsWith("/en/")) {
-    languageSelect.value = "en";
-  } else if (path.startsWith("/de/")) {
-    languageSelect.value = "de";
-  } else {
-    languageSelect.value = "tr";
-  }
+    languageSelect.addEventListener("change", () => {
+      const destinations = {
+        tr: "/",
+        en: "/en/",
+        de: "/de/"
+      };
 
-  languageSelect.addEventListener("change", () => {
-    const destinations = {
-      tr: "/",
-      en: "/en/",
-      de: "/de/"
-    };
+      const destination = destinations[languageSelect.value];
 
-    window.location.href = destinations[languageSelect.value];
-  });
-});
+      if (destination) {
+        window.location.href = destination;
+      }
     });
-  });
+  }
 });
