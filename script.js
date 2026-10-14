@@ -82,13 +82,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 5. Dil seçicisi için erişilebilirlik
-  document.querySelectorAll("[data-language-link]").forEach((link) => {
-    link.addEventListener("click", () => {
-      const language = link.dataset.languageLink;
+ document.addEventListener("DOMContentLoaded", () => {
+  const languageSelect = document.getElementById("language-select");
 
-      if (language) {
-        document.documentElement.lang = language;
-      }
+  if (!languageSelect) return;
+
+  const path = window.location.pathname;
+
+  if (path.startsWith("/en/")) {
+    languageSelect.value = "en";
+  } else if (path.startsWith("/de/")) {
+    languageSelect.value = "de";
+  } else {
+    languageSelect.value = "tr";
+  }
+
+  languageSelect.addEventListener("change", () => {
+    const destinations = {
+      tr: "/",
+      en: "/en/",
+      de: "/de/"
+    };
+
+    window.location.href = destinations[languageSelect.value];
+  });
+});
     });
   });
 });
