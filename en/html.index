@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bahar Pala | Freelance Web Designer</title>
+  <meta name="description" content="Bahar Pala creates modern, responsive websites, portfolios and landing pages for businesses and individuals.">
+  <link rel="canonical" href="https://www.baharpala.com/en/">
+  <link rel="alternate" hreflang="tr" href="https://www.baharpala.com/">
+  <link rel="alternate" hreflang="en" href="https://www.baharpala.com/en/">
+  <link rel="alternate" hreflang="de" href="https://www.baharpala.com/de/">
+  <link rel="alternate" hreflang="x-default" href="https://www.baharpala.com/">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="/en/" aria-label="Bahar Pala home">BP</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="language-switch">
+      <a href="/">TR</a> |
+      <a href="/en/" aria-current="page">EN</a> |
+      <a href="/de/">DE</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">WEB DESIGN & FRONT-END</span>
+        <h1>Modern Websites & <span>Landing Pages</span></h1>
+        <p>
+          Hello, I'm Bahar Pala. I create modern, responsive and
+          user-friendly websites, portfolios and landing pages.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary"
+             href="https://wa.me/905078747215"
+             target="_blank" rel="noopener noreferrer">
+            Let's Discuss Your Project
+          </a>
+          <a class="btn secondary" href="#projects">View My Projects</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Web development example">
+        <div class="code-window">
+          <div class="window-top" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </div>
+          <div class="code-line"><span>&lt;h1&gt;</span> creative ideas <span>&lt;/h1&gt;</span></div>
+          <div class="code-line"><span>.design</span> { modern: true; }</div>
+          <div class="code-line"><span>const</span> passion = "web";</div>
+          <div class="code-line accent">// from idea to launch</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-title"><span>01</span><h2>About Me</h2></div>
+      <div class="about-grid">
+        <div>
+          <p class="lead">Creative web design focused on usability and user experience.</p>
+          <p>I build accessible, attractive and responsive interfaces using HTML, CSS and JavaScript.</p>
+          <div class="contact-mini">
+            <span>Izmir, Türkiye</span>
+            <a href="mailto:baharpalaux@outlook.com">baharpalaux@outlook.com</a>
+          </div>
+        </div>
+        <div class="stats">
+          <div><strong>HTML</strong><span>Web Structure</span></div>
+          <div><strong>CSS</strong><span>Modern Design</span></div>
+          <div><strong>JS</strong><span>Interactions</span></div>
+          <div><strong>UI/UX</strong><span>User Focus</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-title"><span>02</span><h2>My Skills</h2></div>
+      <div class="skills">
+        <div class="skill"><b>HTML5</b><span>Semantic and accessible structure</span></div>
+        <div class="skill"><b>CSS3</b><span>Responsive modern interfaces</span></div>
+        <div class="skill"><b>JavaScript</b><span>Interactive user experiences</span></div>
+        <div class="skill"><b>GitHub</b><span>Version control and deployment</span></div>
+        <div class="skill"><b>Figma</b><span>Interface design and prototyping</span></div>
+        <div class="skill"><b>UI / UX</b><span>User-centered design</span></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-title"><span>03</span><h2>My Projects</h2></div>
+      <div class="project-grid">
+        <article class="project">
+          <a href="https://chefco.com" class="project-image chefco"
+             target="_blank" rel="noopener noreferrer">CHEFCO</a>
+          <div class="project-info"><h3>Chefco</h3><p>Restaurant and chef platform</p><span>HTML · CSS · JavaScript</span></div>
+        </article>
+        <article class="project">
+          <a href="https://mercichefco.com" class="project-image merci"
+             target="_blank" rel="noopener noreferrer">MerciChefco</a>
+          <div class="project-info"><h3>MerciChefco</h3><p>Food and catering website</p><span>Web Design · Responsive</span></div>
+        </article>
+        <article class="project">
+          <a href="https://pianoshabi.com" class="project-image piano"
+             target="_blank" rel="noopener noreferrer">Piano Shabi</a>
+          <div class="project-info"><h3>Piano Shabi</h3><p>Music and events website</p><span>UI/UX · Front-End</span></div>
+        </article>
+        <article class="project">
+          <a href="https://alcabets.com" class="project-image alka"
+             target="_blank" rel="noopener noreferrer">Alkabets</a>
+          <div class="project-info"><h3>Alkabets</h3><p>Travel and guidance website</p><span>Responsive · JavaScript</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-title"><span>04</span><h2>Let's Talk About Your Project</h2></div>
+      <p class="lead">Need a portfolio, landing page or business website? Let's talk.</p>
+      <div class="contact-buttons">
+        <a href="mailto:baharpalaux@outlook.com" class="contact-card email">
+          ✉ <span><small>Email</small>baharpalaux@outlook.com</span>
+        </a>
+        <a href="https://wa.me/905078747215" target="_blank"
+           rel="noopener noreferrer" class="contact-card whatsapp">
+          ◉ <span><small>WhatsApp</small>+90 507 874 72 15</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>BP</strong>
+    <span>© <span id="current-year">2026</span> Bahar Pala · Web Design & Front-End</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
