@@ -87,15 +87,17 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
+
   // 5. Dil seçimi ve sayfa yönlendirme
   const languageSelect = document.getElementById("language-select");
 
   if (languageSelect) {
     const path = window.location.pathname;
 
-    if (path.startsWith("/en/")) {
+    // Açık olan sayının dilini seçicide göster
+    if (/\/en(?:\/|\.html)?$/.test(path)) {
       languageSelect.value = "en";
-    } else if (path.startsWith("/de/")) {
+    } else if (/\/de(?:\/|\.html)?$/.test(path)) {
       languageSelect.value = "de";
     } else {
       languageSelect.value = "tr";
@@ -111,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const destination = destinations[languageSelect.value];
 
       if (destination) {
-        window.location.href = destination;
+        window.location.assign(destination);
       }
     });
   }
