@@ -16,7 +16,7 @@
   <link rel="alternate" hreflang="de" href="https://baharpala.com/de/">
   <link rel="alternate" hreflang="x-default" href="https://baharpala.com/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style.css?v=sea-waves-clean">
+  <link rel="stylesheet" href="/style.css?v=nature-video">
 
   <meta
     property="og:description"
@@ -106,6 +106,10 @@
 
   <main>
     <section id="anasayfa" class="hero">
+      <video class="sea-video" aria-hidden="true" muted loop playsinline preload="none" poster="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Overhead_view_of_waves_on_the_shore.webm/960px--Overhead_view_of_waves_on_the_shore.webm.jpg">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c7/Overhead_view_of_waves_on_the_shore.webm/Overhead_view_of_waves_on_the_shore.webm.480p.vp9.webm" type="video/webm">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c7/Overhead_view_of_waves_on_the_shore.webm/Overhead_view_of_waves_on_the_shore.webm.360p.mpeg4.mov" type="video/mp4">
+      </video>
       <div class="hero-content">
         <span class="eyebrow" data-i18n="hero.eyebrow">
           WEB TASARIM & FRONT-END
@@ -139,6 +143,10 @@
         </div>
       </div>
 
+      <div class="sea-controls">
+        <button type="button" data-sea-toggle aria-label="Deniz videosunu oynat veya duraklat">Oynat / duraklat</button>
+        <span><a href="https://commons.wikimedia.org/wiki/File:Overhead_view_of_waves_on_the_shore.webm">MGA Photography</a> · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></span>
+      </div>
     </section>
 
     <section id="hizmetler" class="section services-section" aria-labelledby="services-title">
@@ -190,6 +198,28 @@
       </div>
     </section>
 
+    <section class="section nature" aria-labelledby="nature-title">
+      <div class="section-title"><h2 id="nature-title">Doğadan gerçek görüntüler</h2></div>
+      <div class="nature-grid">
+        <figure>
+          <video controls playsinline muted preload="none" poster="https://cdn.pixabay.com/video/2021/04/18/71455-538476140_tiny.jpg" aria-label="Papatyanın açılışı">
+            <source src="https://cdn.pixabay.com/video/2021/04/18/71455-538476140_small.mp4" type="video/mp4">
+            <source src="https://cdn.pixabay.com/video/2021/04/18/71455-538476140_large.mp4" type="video/mp4">
+            <a href="https://pixabay.com/videos/bud-flower-daisy-blossom-bloom-71455/">Papatyanın açılışı</a>
+          </video>
+          <figcaption><a href="https://pixabay.com/videos/bud-flower-daisy-blossom-bloom-71455/">Papatyanın açılışı</a></figcaption>
+        </figure>
+        <figure>
+          <video controls playsinline muted preload="none" poster="https://cdn.pixabay.com/video/2025/12/19/322964_tiny.jpg" aria-label="Gün doğumu ve martılar">
+            <source src="https://cdn.pixabay.com/video/2025/12/19/322964_small.mp4" type="video/mp4">
+            <source src="https://cdn.pixabay.com/video/2025/12/19/322964_large.mp4" type="video/mp4">
+            <a href="https://pixabay.com/videos/sunrise-seagull-bird-silhouette-322964/">Gün doğumu ve martılar</a>
+          </video>
+          <figcaption><a href="https://pixabay.com/videos/sunrise-seagull-bird-silhouette-322964/">Gün doğumu ve martılar</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="iletisim" class="section contact">
       <div class="section-title">
         <h2 data-i18n="contact.title">Web Tasarım Projeniz İçin İletişim</h2>
@@ -238,7 +268,7 @@
     </div>
   </aside>
 
-  <script src="/script.js?v=rgb-reviews" defer></script>
+  <script src="/script.js?v=nature-video" defer></script>
 </body>
 </html>
 
