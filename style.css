@@ -348,3 +348,28 @@ footer strong { color: var(--ink); }
     to { opacity: 1; transform: translateY(0); }
   }
 }
+
+.reviews { background: var(--surface); }
+.reviews-note { color: var(--muted); margin-bottom: 18px; }
+.review-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.review-card {
+  padding: clamp(18px, 4vw, 34px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--page);
+}
+.review-stars { color: rgb(138 83 0); letter-spacing: .12em; }
+.review-card blockquote { margin: 8px 0; font-size: 1.1rem; }
+.review-card p { color: var(--muted); font-weight: 600; }
+.review-controls:not([hidden]) { display: flex; gap: 8px; margin-top: 14px; }
+.review-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--accent);
+  font: inherit;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
