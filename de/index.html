@@ -18,7 +18,7 @@
 
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style.css?v=sea-waves-clean">
+  <link rel="stylesheet" href="/style.css?v=nature-video">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bahar Pala">
@@ -51,6 +51,10 @@
 
   <main>
     <section id="home" class="hero">
+      <video class="sea-video" aria-hidden="true" muted loop playsinline preload="none" poster="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Overhead_view_of_waves_on_the_shore.webm/960px--Overhead_view_of_waves_on_the_shore.webm.jpg">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c7/Overhead_view_of_waves_on_the_shore.webm/Overhead_view_of_waves_on_the_shore.webm.480p.vp9.webm" type="video/webm">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c7/Overhead_view_of_waves_on_the_shore.webm/Overhead_view_of_waves_on_the_shore.webm.360p.mpeg4.mov" type="video/mp4">
+      </video>
       <div class="hero-content">
         <span class="eyebrow">WEBDESIGN & FRONT-END</span>
         <h1>Freelance-Webdesign &amp; <span>Landingpages</span></h1>
@@ -70,6 +74,10 @@
         </div>
       </div>
 
+      <div class="sea-controls">
+        <button type="button" data-sea-toggle aria-label="Meeresvideo abspielen oder pausieren">Abspielen / pausieren</button>
+        <span><a href="https://commons.wikimedia.org/wiki/File:Overhead_view_of_waves_on_the_shore.webm">MGA Photography</a> · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></span>
+      </div>
     </section>
 
     <section id="services" class="section services-section" aria-labelledby="services-title">
@@ -121,6 +129,28 @@
       </div>
     </section>
 
+    <section class="section nature" aria-labelledby="nature-title">
+      <div class="section-title"><h2 id="nature-title">Naturaufnahmen</h2></div>
+      <div class="nature-grid">
+        <figure>
+          <video controls playsinline muted preload="none" poster="https://cdn.pixabay.com/video/2021/04/18/71455-538476140_tiny.jpg" aria-label="Eine Margerite blüht auf">
+            <source src="https://cdn.pixabay.com/video/2021/04/18/71455-538476140_small.mp4" type="video/mp4">
+            <source src="https://cdn.pixabay.com/video/2021/04/18/71455-538476140_large.mp4" type="video/mp4">
+            <a href="https://pixabay.com/videos/bud-flower-daisy-blossom-bloom-71455/">Eine Margerite blüht auf</a>
+          </video>
+          <figcaption><a href="https://pixabay.com/videos/bud-flower-daisy-blossom-bloom-71455/">Eine Margerite blüht auf</a></figcaption>
+        </figure>
+        <figure>
+          <video controls playsinline muted preload="none" poster="https://cdn.pixabay.com/video/2025/12/19/322964_tiny.jpg" aria-label="Sonnenaufgang und Möwen">
+            <source src="https://cdn.pixabay.com/video/2025/12/19/322964_small.mp4" type="video/mp4">
+            <source src="https://cdn.pixabay.com/video/2025/12/19/322964_large.mp4" type="video/mp4">
+            <a href="https://pixabay.com/videos/sunrise-seagull-bird-silhouette-322964/">Sonnenaufgang und Möwen</a>
+          </video>
+          <figcaption><a href="https://pixabay.com/videos/sunrise-seagull-bird-silhouette-322964/">Sonnenaufgang und Möwen</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="contact" class="section contact">
       <div class="section-title">
         <h2>Lassen Sie uns über Ihr Projekt sprechen</h2>
@@ -156,6 +186,6 @@
     </div>
   </aside>
 
-  <script src="/script.js?v=rgb-reviews" defer></script>
+  <script src="/script.js?v=nature-video" defer></script>
 </body>
 </html>
