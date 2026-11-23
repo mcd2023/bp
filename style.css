@@ -285,3 +285,56 @@ footer strong { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Tanıtım kartı ve giriş animasyonu */
+.promotion {
+  position: fixed;
+  z-index: 20;
+  inset-inline-end: max(12px, env(safe-area-inset-right));
+  inset-block-end: max(12px, env(safe-area-inset-bottom));
+  width: min(320px, calc(100% - 24px));
+  padding: 16px 48px 16px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: .875rem;
+}
+
+.promotion p { color: var(--muted); }
+.promotion strong { display: block; font-size: 1rem; }
+.promotion-label { color: var(--accent); font-weight: 700; }
+
+.promotion-links {
+  display: grid;
+  justify-items: start;
+  gap: 3px;
+  margin-top: 8px;
+}
+
+.promotion-close {
+  position: absolute;
+  inset-block-start: 5px;
+  inset-inline-end: 5px;
+  inline-size: 40px;
+  block-size: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.promotion-close:hover { background: var(--page); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-content, .hero-card { animation: rise-in .65s ease-out both; }
+  .hero-card { animation-delay: .12s; }
+  .promotion:not([hidden]) { animation: rise-in .35s ease-out both; }
+
+  @keyframes rise-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
