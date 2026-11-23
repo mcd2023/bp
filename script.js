@@ -117,4 +117,44 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Tanıtımı oturum başına bir kez göster. Açıldığında odak yerinde kalır.
+  const promotion = document.querySelector("[data-promotion]");
+  if (promotion) {
+    const storageKey = "bahar-pala-promotion-seen";
+    let seen = false;
+
+    try {
+      seen = sessionStorage.getItem(storageKey) === "1";
+    } catch {
+      // Depolama engellendiğinde tanıtım bu sayfada çalışmaya devam eder.
+    }
+
+    if (!seen) {
+      const closeButton = promotion.querySelector("[data-promotion-close]");
+      const closePromotion = () => {
+        const hadFocus = promotion.contains(document.activeElement);
+        promotion.hidden = true;
+
+        if (hadFocus) {
+          document.querySelector(".logo")?.focus({ preventScroll: true });
+        }
+      };
+
+      closeButton.addEventListener("click", closePromotion);
+      promotion.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closePromotion();
+      });
+
+      window.setTimeout(() => {
+        promotion.hidden = false;
+
+        try {
+          sessionStorage.setItem(storageKey, "1");
+        } catch {
+          // Depolama erişimi tanıtımın görünmesini engellemez.
+        }
+      }, 4500);
+    }
+  }
 });
