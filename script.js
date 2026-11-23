@@ -157,4 +157,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 4500);
     }
   }
+
+  const reviews = document.querySelector("[data-review-carousel]");
+  if (reviews) {
+    const cards = Array.from(reviews.querySelectorAll(".review-card"));
+    const controls = reviews.querySelector(".review-controls");
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let current = 0;
+    let manual = false;
+
+    const show = (step) => {
+      current = (current + step + cards.length) % cards.length;
+      cards.forEach((card, index) => {
+        card.hidden = index !== current;
+      });
+    };
+
+    show(0);
+    controls.hidden = false;
+    controls.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-review-step]");
+      if (!button) return;
+      manual = true;
+      show(Number(button.dataset.reviewStep));
+    });
+
+    window.setInterval(() => {
+      if (!manual && !motion.matches && !document.hidden &&
+          !reviews.matches(":hover, :focus-within")) {
+        show(1);
+      }
+    }, 6500);
+  }
 });
