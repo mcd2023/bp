@@ -189,4 +189,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 6500);
   }
+
+  const sea = document.querySelector(".sea-video");
+  const seaToggle = document.querySelector("[data-sea-toggle]");
+  if (sea && seaToggle) {
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const playSea = () => sea.play().catch(() => {});
+    if (!motionPreference.matches) playSea();
+    motionPreference.addEventListener("change", (event) => {
+      if (event.matches) sea.pause();
+    });
+    seaToggle.addEventListener("click", () => {
+      if (sea.paused) playSea();
+      else sea.pause();
+    });
+  }
 });
