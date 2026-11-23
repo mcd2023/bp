@@ -102,10 +102,6 @@ a:focus-visible, button:focus-visible, select:focus-visible {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(28px, 5vw, 72px);
   padding: clamp(68px, 9vw, 132px) var(--gutter);
   border-bottom: 1px solid var(--border);
   background: linear-gradient(115deg, rgb(255 255 255) 35%, rgb(233 237 251));
@@ -120,13 +116,14 @@ a:focus-visible, button:focus-visible, select:focus-visible {
 
 .hero h1 {
   margin: 14px 0 20px;
-  max-width: 14ch;
+  max-width: 20ch;
   font: 700 clamp(2.5rem, 5.8vw, 5rem)/1.04 'Playfair Display', Georgia, serif;
   letter-spacing: -.045em;
   overflow-wrap: anywhere;
   text-wrap: balance;
 }
 
+.hero-content { max-width: 850px; }
 .hero h1 span { color: var(--accent); }
 .hero p { max-width: 55ch; color: var(--muted); font-size: 1.0625rem; }
 
@@ -155,22 +152,6 @@ a:focus-visible, button:focus-visible, select:focus-visible {
 .primary:hover, .cv-btn:hover { background: var(--accent-dark); }
 .secondary { border-color: var(--border); background: var(--surface); }
 .secondary:hover { border-color: var(--accent); }
-
-.code-window {
-  position: relative;
-  min-width: 0;
-  padding: 56px clamp(18px, 3vw, 32px) 24px;
-  border-radius: var(--radius);
-  background: var(--ink);
-  color: rgb(232 237 255);
-  box-shadow: var(--shadow);
-}
-
-.window-top { position: absolute; top: 24px; display: flex; gap: 7px; }
-.window-top i { width: 8px; height: 8px; border-radius: 50%; background: rgb(164 178 209); }
-.code-line { margin: 10px 0; font: .9rem/1.65 ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
-.code-line span { color: rgb(185 198 255); }
-.code-line.accent { color: rgb(169 233 209); }
 
 .section { padding: clamp(48px, 7vw, 94px) var(--gutter); }
 .section + .section { border-top: 1px solid var(--border); }
@@ -282,7 +263,7 @@ footer strong { color: var(--ink); }
   .header { gap: 9px 12px; }
   .header nav { gap: 4px 12px; }
   .header nav a { padding-block: 4px; }
-  .hero, .project, .skills { grid-template-columns: minmax(0, 1fr); }
+  .project, .skills { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-block: 48px; }
   .project-image { min-height: 150px; }
   .contact-buttons { flex-direction: column; align-items: flex-start; }
@@ -339,8 +320,7 @@ footer strong { color: var(--ink); }
 .promotion-close:hover { background: var(--page); }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-content, .hero-card { animation: rise-in .65s ease-out both; }
-  .hero-card { animation-delay: .12s; }
+  .hero-content { animation: rise-in .65s ease-out both; }
   .promotion:not([hidden]) { animation: rise-in .35s ease-out both; }
 
   @keyframes rise-in {
