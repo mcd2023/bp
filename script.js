@@ -193,21 +193,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sea = document.querySelector(".sea-video");
   if (sea) {
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const connection = navigator.connection;
-    const allowed = () => !motionPreference.matches &&
-      !connection?.saveData && !/^(slow-2g|2g|3g)$/.test(connection?.effectiveType || "");
-    const syncVideo = () => {
-      if (allowed() && !document.hidden) sea.play().catch(() => {});
-      else sea.pause();
-    };
-    // Defer decorative video on all screen sizes until after page load.
-    const start = () => {
-      if ("requestIdleCallback" in window) window.requestIdleCallback(syncVideo);
-      else window.setTimeout(syncVideo, 1000);
-    };
-    if (document.readyState === "complete") start();
-    else window.addEventListener("load", start, { once: true });
-    motionPreference.addEventListener("change", syncVideo);
-    document.addEventListener("visibilitychange", syncVideo);
+    const playSea = () => sea.play().catch(() => {});
+    if (!motionPreference.matches) playSea();
+    motionPreference.addEventListener("change", (event) => {
+      if (event.matches) sea.pause();
+    });
   }
 });
