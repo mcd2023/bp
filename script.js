@@ -193,7 +193,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const sea = document.querySelector(".sea-video");
   if (sea) {
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const playSea = () => sea.play().catch(() => {});
+    sea.muted = true;
+    sea.defaultMuted = true;
+    sea.playsInline = true;
+    sea.autoplay = true;
+    const playSea = () => {
+      if (!motionPreference.matches && sea.paused) sea.play().catch(() => {});
+    };
+    sea.addEventListener("canplay", playSea);
+    window.addEventListener("pageshow", playSea);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) playSea();
+    });
+    document.addEventListener("pointerdown", playSea, { passive: true });
     if (!motionPreference.matches) playSea();
     motionPreference.addEventListener("change", (event) => {
       if (event.matches) sea.pause();
